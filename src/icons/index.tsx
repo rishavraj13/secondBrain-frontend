@@ -8,3 +8,4 @@ export const iconSizeVariants = {
     'lg': 'size-6',
 
 }
+
