@@ -9,7 +9,7 @@ import { ShareIcon } from './icons/shareicon'
 function App() {
 
   return (
-    <div className=''>
+    <div className='p-4 '>
 
 
       <div className='flex m-3 gap-3 space-x-1 justify-end'>
@@ -19,8 +19,22 @@ function App() {
 
       </div>
 
-      <div className=''>
-        <Cards />
+      <div className='flex gap-4'>
+        <div>
+          <Cards type='Youtube' link='https://www.youtube.com/watch?v=R8XzIfEY_xE&list=PL_z_8CaSLPWdbOTog8Jxk9XOjzUs3egMP' title='Backtracking' />
+        </div>
+
+
+        <div>
+          <Cards type='Notes' link='https://www.youtube.com/watch?v=R8XzIfEY_xE&list=PL_z_8CaSLPWdbOTog8Jxk9XOjzUs3egMP' title='Notes' />
+
+        </div>
+
+        <div className=''>
+          <Cards type='Twitter' link='https://publish.twitter.com/?url=https://twitter.com/FootyHumour/status/1958515385751253401' title='football- tweet' />
+
+        </div>
+
       </div>
 
     </div>
