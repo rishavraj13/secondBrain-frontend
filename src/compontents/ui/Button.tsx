@@ -25,7 +25,7 @@ const DefaultSize = {
 }
 
 export const Button = (props: ButtonProps) => {
-    return <button className= {`${VariantStyles[props.variant]}
+    return <button onClick={props.onClick} className= {`${VariantStyles[props.variant]}
      ${DefaultStyles}
       ${DefaultSize[props.size]} `} >
         {props.StartIcon ? <div className="pr-2">{props.StartIcon}</div>: null}
