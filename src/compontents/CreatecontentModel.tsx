@@ -10,7 +10,7 @@ export function CreatecontentModel({ open, Onclose }) {
                     <div className="flex flex-col justify-center">
                         <div className="bg-white rounded opacity-100 min-h-52  border">
                             <div className="flex justify-end  m-1 ">
-                                <button onClick={Onclose}>
+                                <button onClick={Onclose} className="cursor-pointer">
                                     <CrossIcon size="md" />
                                 </button>
                             </div>
