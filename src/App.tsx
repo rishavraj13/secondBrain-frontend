@@ -18,7 +18,7 @@ function App() {
     <div>
       <Sidebar />
 
-      <div className='p-4 ml-72 h-min-screen bg-grey-100'>
+      <div className='p-4 ml-72 h-min-screen bg-grey-100 border-1'>
         <CreatecontentModel open={modelOpen} Onclose={() => {
           SetmodelOpen(false);
         }} />
