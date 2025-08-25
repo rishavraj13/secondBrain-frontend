@@ -1,37 +1,42 @@
-import  { type ReactNode } from "react";
+import { type ReactNode } from "react";
+import clsx from "clsx";
 
-
- interface ButtonProps {
-    variant:"primary" | "secondary";
-    size: "sm" | "md" | "lg";
-    StartIcon?: ReactNode,
-    EndIcon?: ReactNode,
-    text: string,
-    onClick?: () => void,
-
+interface ButtonProps {
+  variant: "primary" | "secondary";
+  size: "sm" | "md" | "lg";
+  StartIcon?: ReactNode;
+  EndIcon?: ReactNode;
+  text: string;
+  onClick?: () => void;
+  fullWidth?: boolean;
 }
 
 const VariantStyles = {
-    "primary": "bg-blue-600 text-white",
-    "secondary": "bg-blue-300 text-white" 
-}
+  primary: "bg-blue-600 text-white",
+  secondary: "bg-blue-300 text-white",
+};
 
-const DefaultStyles = "rounded-md p-2 flex "
+const DefaultStyles = "rounded-md p-2 flex items-center justify-center";
 
 const DefaultSize = {
-    "sm": "py-1 px-2",
-    "md": "py-2 px-4" ,
-    "lg": "py-4 px-6",
-}
+  sm: "py-1 px-2",
+  md: "py-2 px-4",
+  lg: "py-4 px-6",
+};
 
 export const Button = (props: ButtonProps) => {
-    return <button onClick={props.onClick} className= {`${VariantStyles[props.variant]}
-     ${DefaultStyles}
-      ${DefaultSize[props.size]} `} >
-        {props.StartIcon ? <div className="pr-2">{props.StartIcon}</div>: null}
-        {props.text}
-        {props.EndIcon}
-    </button>
-}
+  const classes = clsx(
+    VariantStyles[props.variant],
+    DefaultStyles,
+    DefaultSize[props.size],
+    props.fullWidth && "w-full"
+  );
 
-<Button variant = "primary" size = "md" onClick ={() => {}} text = {'asd'}/>
+  return (
+    <button onClick={props.onClick} className={classes}>
+      {props.StartIcon && <div className="pr-2">{props.StartIcon}</div>}
+      {props.text}
+      {props.EndIcon && <div className="pl-2">{props.EndIcon}</div>}
+    </button>
+  );
+};

@@ -39,7 +39,7 @@ export const Sidebar = () => {
                 </div>
 
 
-                <div className="py-4">
+                <div className="py-4 px-6">
                     <SidebarItems text="Twitter" icons={<TwitterIcon />} />
                     <SidebarItems text="Youtube" icons={<YoutubeIcon />} />
 
